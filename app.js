@@ -1,20 +1,18 @@
-// variables
+// lista de nombres
 let nombres = [];
-
 
 
 //función para agregar nombres
 function agregarAmigo () {
-   let agregarAmigo = document.getElementById("amigo")
-   let nombreAgregado = agregarAmigo.value.trim();
+   let inputAmigo = document.getElementById("amigo")
+   let nombre = inputAmigo.value.trim();
    
-   if (nombreAgregado === '') {
+   if (nombre === '') {
     alert('Por favor, inserte un nombre')
-   } else {
-    nombres.push(nombreAgregado);
-    actualizarLista();
-    console.log(nombres);
-    agregarAmigo.value= '';
+   }  else {
+       nombres.push(nombre);
+       actualizarLista();
+       inputAmigo.value= '';
     }
 }   
 
@@ -34,10 +32,9 @@ function sortearAmigo() {
     if (nombres.length < 2) {
         alert('Por favor introducir dos o mas nombres')
     } else {
-         let amigoAleatorio = Math.floor(Math.random()*nombres.length);
-         let amigoSorteado = nombres[amigoAleatorio];
-         let resultadoFinal = document.getElementById('resultado').innerHTML = "El amigo secreto es: " + amigoSorteado
-         console.log(amigoSorteado)
+         let indiceAleatorio = Math.floor(Math.random()*nombres.length);
+         let amigoSorteado = nombres[indiceAleatorio];
+         document.getElementById('resultado').innerHTML = "El amigo secreto es: " + amigoSorteado
         }
     }
     
